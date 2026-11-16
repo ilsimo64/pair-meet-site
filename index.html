@@ -1,1 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pair Meet — Cross-Server Random & Interest Chat for Discord</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #181b24;
+      --surface-hover: #212532;
+      --blurple: #5865F2;
+      --blurple-hover: #4752C4;
+      --text: #f2f3f5;
+      --muted: #b5bac1;
+      --border: #2b2f3d;
+      --green: #23a559;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--text); }
+    main {
+      flex: 1;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .hero {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 4.5rem;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(88, 101, 242, 0.15);
+      color: #8ea1e1;
+      border: 1px solid rgba(88, 101, 242, 0.35);
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+    h1 {
+      font-size: 2.75rem;
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+    }
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary {
+      background-color: var(--blurple);
+      color: #fff;
+    }
+    .btn-primary:hover { background-color: var(--blurple-hover); }
+    .btn-secondary {
+      background-color: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { background-color: var(--surface-hover); }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer .links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    footer a:hover { color: var(--text); text-decoration: underline; }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.1rem; }
+      header { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">🌍 Pair Meet</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://discord.gg/ZRyHp256VS" target="_blank" rel="noopener">Support Server</a>
+    </nav>
+  </header>
 
+  <main>
+    <section class="hero">
+      <div class="badge">Cross-Server Discord Chat Bot</div>
+      <h1>Meet new people across Discord without leaving your server.</h1>
+      <p>
+        Pair Meet connects users from different communities in private, moderated chat rooms.
+        Match at random, search by shared interests, or invite friends with a 4-digit code.
+      </p>
+      <div class="cta-group">
+        <a href="https://discord.com/oauth2/authorize?client_id=1554152193634996365&permissions=8&integration_type=0&scope=bot" class="btn btn-primary" target="_blank" rel="noopener">
+          ➕ Add to Discord
+        </a>
+        <a href="https://discord.gg/ZRyHp256VS" class="btn btn-secondary" target="_blank" rel="noopener">
+          💬 Join Support Server
+        </a>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="card">
+        <h3>🎲 Random & Interest Matching</h3>
+        <p>Start a spontaneous conversation with anyone on the network or find people who share your hobbies using <code>/find</code>.</p>
+      </div>
+      <div class="card">
+        <h3>🔑 Private Group Rooms</h3>
+        <p>Every session creates a private temporary channel with a 4-digit code so friends can request to join (up to 6 participants).</p>
+      </div>
+      <div class="card">
+        <h3>🕵️ Incognito Mode</h3>
+        <p>Keep your profile private. Incognito mode hides your username and avatar and prevents same-server matches.</p>
+      </div>
+      <div class="card">
+        <h3>🛡️ Built-in Safety & Moderation</h3>
+        <p>Protected by Discord AutoMod integration, progressive link-unlock protection, custom server word filters, and instant reporting.</p>
+      </div>
+      <div class="card">
+        <h3>⚡ Real-Time Sync</h3>
+        <p>Seamless cross-server message relay supporting replies, attachments, edits, deletions, and reactions.</p>
+      </div>
+      <div class="card">
+        <h3>🛠️ Guided 1-Minute Setup</h3>
+        <p>Server admins can configure panels, chat categories, and moderation logs effortlessly with <code>/setup</code>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://discord.gg/ZRyHp256VS" target="_blank" rel="noopener">Support Server</a>
+    </div>
+    <p>&copy; 2026 Pair Meet Bot. Not affiliated with Discord Inc.</p>
+  </footer>
+</body>
+</html>

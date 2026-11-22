@@ -1,0 +1,46 @@
+:root{--bg:#0f1117;--surface:#181b24;--surface-hover:#212532;--blurple:#5865F2;--blurple-hover:#4752C4;--text:#f2f3f5;--muted:#b5bac1;--border:#2b2f3d;--green:#23a559}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background-color:var(--bg);color:var(--text);line-height:1.6;display:flex;flex-direction:column;min-height:100vh}
+a{color:inherit}
+header{border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;max-width:1100px;width:100%;margin:0 auto;gap:1.5rem}
+.logo{font-size:1.35rem;font-weight:800;display:flex;align-items:center;gap:.5rem;color:var(--text);text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-size:.95rem;font-weight:500;transition:color .2s}
+nav a:hover,nav a.active{color:var(--text)}
+main{flex:1;max-width:1100px;width:100%;margin:0 auto;padding:4rem 2rem}
+.hero{text-align:center;max-width:720px;margin:0 auto 4.5rem}
+.badge{display:inline-block;background:rgba(88,101,242,.15);color:#8ea1e1;border:1px solid rgba(88,101,242,.35);padding:.3rem .85rem;border-radius:999px;font-size:.85rem;font-weight:600;margin-bottom:1.25rem}
+h1{font-size:2.75rem;line-height:1.15;font-weight:800;margin-bottom:1.25rem;letter-spacing:-.035em}
+.hero p{color:var(--muted);font-size:1.15rem;margin-bottom:2rem}
+.cta-group{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.85rem 1.75rem;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:background .2s,transform .1s,border-color .2s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background-color:var(--blurple);color:#fff}.btn-primary:hover{background-color:var(--blurple-hover)}
+.btn-secondary{background-color:var(--surface);color:var(--text);border:1px solid var(--border)}.btn-secondary:hover{background-color:var(--surface-hover)}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.75rem;transition:transform .2s,border-color .2s}.card:hover{transform:translateY(-3px);border-color:#454b61}
+.card h3{font-size:1.15rem;margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem}.card p{color:var(--muted);font-size:.95rem}
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:.9rem;margin-top:auto}
+footer .links{display:flex;justify-content:center;gap:1.5rem;margin-bottom:.75rem;flex-wrap:wrap}footer a{color:var(--muted);text-decoration:none}footer a:hover{color:var(--text);text-decoration:underline}
+.page-intro{text-align:center;max-width:760px;margin:0 auto 3rem}.page-intro .badge{margin-bottom:1rem}.page-intro p{color:var(--muted);font-size:1.05rem;max-width:680px;margin:0 auto}
+.section-title{text-align:center;margin:0 auto 2rem;max-width:700px}.section-title h2{font-size:1.8rem;margin-bottom:.55rem}.section-title p{color:var(--muted)}
+.content-section{margin:3rem 0}.content-section h2{font-size:1.5rem;margin-bottom:1rem}.content-section p{color:var(--muted);margin:.65rem 0}.content-section ul{padding-left:1.4rem;color:var(--muted)}.content-section li{margin:.5rem 0}
+.command-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}.command{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem}.command code,.inline-code{color:#c7ccff;background:#252a3a;border-radius:6px;padding:.15rem .4rem;font-size:.92em}.command p{color:var(--muted);font-size:.93rem;margin-top:.45rem}
+.notice{background:rgba(88,101,242,.09);border:1px solid rgba(88,101,242,.3);border-radius:10px;padding:1rem 1.2rem;color:var(--muted);margin:2rem 0}
+.doc-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2.5rem;max-width:820px;margin:0 auto}.doc-box h1{font-size:2rem;margin-bottom:.5rem}.updated{color:var(--muted);font-size:.9rem;margin-bottom:2rem}.doc-box h2{font-size:1.25rem;margin-top:1.75rem;margin-bottom:.65rem;color:#fff}.doc-box p,.doc-box li{color:var(--muted);font-size:.98rem;margin-bottom:.85rem}.doc-box ul{padding-left:1.4rem;margin-bottom:1rem}.doc-box a.link{color:#8ea1e1;text-decoration:none}.doc-box a.link:hover{text-decoration:underline}
+/* Handshake curtain transition */
+.page-curtain{position:fixed;inset:0;z-index:9999;background:var(--bg);display:grid;place-items:center;pointer-events:none;transform:translateY(-105%)}
+.page-curtain.drop{animation:curtainDrop .55s cubic-bezier(.72,0,.25,1) forwards}
+.page-curtain.lift{transform:translateY(0);animation:curtainLift .62s cubic-bezier(.72,0,.22,1) forwards}
+.curtain-handshake{font-size:clamp(4rem,10vw,6rem);line-height:1;display:block;filter:drop-shadow(0 10px 24px rgba(0,0,0,.35));transform-origin:50% 70%;animation:handshakeDrop .55s cubic-bezier(.72,0,.25,1) both}
+.page-curtain.lift .curtain-handshake{animation:handshakeRise .62s cubic-bezier(.72,0,.22,1) both}
+.curtain-handshake.bounce{animation:handshakeBounce .28s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes curtainDrop{to{transform:translateY(0)}}
+@keyframes curtainLift{to{transform:translateY(-105%)}}
+@keyframes handshakeDrop{from{transform:translateY(-42vh) scale(.88)}to{transform:translateY(0) scale(1)}}
+@keyframes handshakeBounce{0%{transform:translateY(0) scale(1)}45%{transform:translateY(-13px) scale(1.04)}100%{transform:translateY(0) scale(1)}}
+@keyframes handshakeRise{from{transform:translateY(0) scale(1)}to{transform:translateY(-42vh) scale(.88)}}
+@media(max-width:800px){header{flex-wrap:wrap;justify-content:center;padding:1rem}nav{justify-content:center;gap:.8rem}nav a{font-size:.88rem}main{padding:3rem 1.25rem}}
+@media(max-width:600px){h1{font-size:2.1rem}.hero{margin-bottom:3rem}.hero p{font-size:1.02rem}.doc-box{padding:1.35rem}.page-intro h1{font-size:2.15rem}footer .links{gap:1rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.page-curtain,.curtain-earth{animation:none!important}.page-curtain{display:none}}
